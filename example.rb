@@ -28,7 +28,7 @@ end
 ((last.to_i+1)..1000000000).each{|x|
     begin
         rc.set("foo#{x}",x)
-        puts rc.get("foo#{x}")
+        puts Time.now.strftime('%H:%M:%S.%L') +" : " + rc.get("foo#{x}")
         rc.set("__last__",x)
     rescue => e
         puts "error #{e.to_s}"
